@@ -9,3 +9,10 @@ import {
 } from "./analytics.js";
 
 console.log("importing data from the database");
+fetchStudents((rawData) => {
+  console.log("Data received\n");
+
+  const students = rawData.map(
+    s => new Student(s.id, s.name, s.courses)
+  );
+});
